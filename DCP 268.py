@@ -1,6 +1,7 @@
 # Problem:
 # Given a 32-bit positive integer N, determine whether it is a power of four in faster than O(log N) time.
 
+# Solution:
 def fourth_root(n):
     return True if (n**.25) % 1 == 0 else False
 
