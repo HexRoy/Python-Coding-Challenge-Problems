@@ -14,7 +14,6 @@
 
 # Solution
 # =====================================================================================================================
-import operator
 def most_similar(k, website_users):
     """
     most_similar: Finds k pairs of most similar websites based on users
