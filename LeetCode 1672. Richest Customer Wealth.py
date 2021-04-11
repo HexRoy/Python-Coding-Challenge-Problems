@@ -41,7 +41,7 @@
 
 # Solution
 # ====================================================================================================================
-# Original Solution ~ 50ms
+# Original Solution ~ 40ms
 class Solution:
     def maximumWealth(self, accounts):
         return max(sum(x) for x in accounts)
