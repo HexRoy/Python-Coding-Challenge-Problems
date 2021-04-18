@@ -44,6 +44,7 @@
 
 # Solution
 # ====================================================================================================================
+# Solution ~ 52 ms
 class Solution:
     def restoreString(self, s, indices):
         word_len = len(s)
