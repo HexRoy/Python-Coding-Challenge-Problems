@@ -61,6 +61,16 @@ class Solution:
 
         return final_word
 
+# Solution v2 ~ 48 ms: Using List comprehension and .join function
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        word_len = len(s)
+        result = [[] for x in range(word_len)]
+
+        for i in range(word_len):
+            result[indices[i]] = s[i]
+
+        return "".join(result)
 
 # Input
 # =====================================================================================================================
