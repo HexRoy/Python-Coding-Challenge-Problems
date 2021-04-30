@@ -43,7 +43,7 @@ class Solution:
         return running_sum
 
 # V2 ~ 32ms
-# Storing the current sum values cuts down on runtime 
+# Storing the current sum values cuts down on runtime
 class Solution:
     def runningSum(self, nums):
         running_sum = []
