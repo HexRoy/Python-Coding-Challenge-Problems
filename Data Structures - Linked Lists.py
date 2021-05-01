@@ -1,5 +1,3 @@
-# Original Implementation from:
-# https://github.com/codebasics/data-structures-algorithms-python/blob/master/data_structures/3_LinkedList/3_linked_list.py
 
 class Node:
     def __init__(self, data=None, next=None):
@@ -89,6 +87,9 @@ class LinkedList:
             self.insert_at_end(data)
 
     def insert_after_value(self, data_after, data_to_insert):
+        if self.head is None:
+            return
+
         itr = self.head
         while itr:
             if itr.data == data_after:
@@ -97,6 +98,9 @@ class LinkedList:
             itr = itr.next
 
     def remove_by_value(self, data):
+        if self.head is None:
+            return
+
         itr = self.head
 
         if itr.data == data:
