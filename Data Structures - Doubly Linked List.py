@@ -34,7 +34,7 @@ class DoublyLinkedList:
         while itr.next is not None:
             itr = itr.next
 
-        linked_list =""
+        linked_list = ""
 
         while itr:
             linked_list += str(itr.data)
@@ -57,13 +57,13 @@ class DoublyLinkedList:
     def insert_at_beginning(self, data):
         new_node = Node(data, self.head)
 
-        if self.head == None:
+        if self.head is None:
             self.head = new_node
         else:
             self.head.prev = new_node
             self.head = new_node
 
-    def insert_at_end(self,data):
+    def insert_at_end(self, data):
         if self.head is None:
             self.head = Node(data)
             return
@@ -88,7 +88,7 @@ class DoublyLinkedList:
             count = 0
             while itr:
                 if count+1 == index:
-                    new_node = Node(data,itr.next, itr)
+                    new_node = Node(data, itr.next, itr)
                     itr.next.prev = new_node
                     itr.next = new_node
                     return
@@ -102,7 +102,7 @@ class DoublyLinkedList:
             self.head = self.head.next
             self.head.prev = None
             return
-        
+
         itr = self.head
         count = 0
         while itr:
@@ -151,31 +151,19 @@ class DoublyLinkedList:
                     return
 
 
-
-
-
-
-
-
-    # Print linked list in reverse direction. Use node.prev for this.
-
-
-
 if __name__ == '__main__':
     ll = DoublyLinkedList()
-    ll.insert_values(["banana","mango","grapes","orange"])
+    ll.insert_values(["banana", "mango", "grapes", "orange"])
     ll.print_forward()
     ll.print_backward()
     ll.insert_at_end("figs")
     ll.print_forward()
-    ll.insert_at(0,"jackfruit")
+    ll.insert_at(0, "jackfruit")
     ll.print_forward()
-    ll.insert_at(6,"dates")
+    ll.insert_at(6, "dates")
     ll.print_forward()
-    ll.insert_at(2,"kiwi")
+    ll.insert_at(2, "kiwi")
     ll.print_forward()
-
-
 
 # Exercise
 
