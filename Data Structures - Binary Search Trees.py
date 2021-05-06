@@ -90,6 +90,35 @@ class BinarySearchTreeNode:
             elements += self.right.in_order_traversal()
         return elements
 
+    def delete(self, val):
+        if val < self.data:
+            if self.left:
+                self.left = self.left.delete(val)
+        elif val > self.data:
+            if self.right:
+                self.right = self.right.delete(val)
+        else:
+            if self.left is None and self.right is None:
+                return None
+            elif self.left is None:
+                return self.right
+            elif self.right is None:
+                return self.left
+
+            # Setting the max value as the target
+
+            max_val = self.left.find_max()
+            self.data = max_val
+            self.left = self.left.delete(max_val)
+
+
+            # Setting the min value as the target
+
+            # min_val = self.right.find_min()
+            # self.data = min_val
+            # self.right = self.right.delete(min_val)
+
+        return self
 
 def build_tree(elements):
     print("Building tree with these elements:",elements)
@@ -115,7 +144,7 @@ if __name__ == '__main__':
     print("sum", numbers_tree.calculate_sum())
     print("Post order traversal", numbers_tree.post_order_traversal())
     print("Pre order traversal", numbers_tree.pre_order_traversal())
-
+    print("Deleting 20", numbers_tree.delete(20).in_order_traversal())
 
 # Binary Tree Part 1 Exercise
 # Add following methods to BinarySearchTreeNode class created in main video tutorial
@@ -126,3 +155,26 @@ if __name__ == '__main__':
 # 4. post_order_traversal(): performs post order traversal of a binary tree
 # 5. pre_order_traversal(): perofrms pre order traversal of a binary tree
 # Solution
+
+# Binary Tree Part 2 Exercise
+# Modify delete method in class BinarySearchTreeNode class to use min element from left subtree.
+# You will remove lines marked with ---> and use max value from left subtree
+#
+#     def delete(self, val):
+#         if val < self.data:
+#             if self.left:
+#                 self.left = self.left.delete(val)
+#         elif val > self.data:
+#             if self.right:
+#                 self.right = self.right.delete(val)
+#         else:
+#             if self.left is None and self.right is None:
+#                 return None
+#             elif self.left is None:
+#                 return self.right
+#             elif self.right is None:
+#                 return self.right
+#
+#           --->  min_val = self.right.find_min()
+#           --->  self.data = min_val
+#           --->  self.right = self.right.delete(min_val)
