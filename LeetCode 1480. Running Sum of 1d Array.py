@@ -28,7 +28,7 @@
 # -10^6 <= nums[i] <= 10^6
 
 
-# Solution
+# Solution Python
 # ====================================================================================================================
 # Original Solution ~ 50ms
 class Solution:
@@ -52,6 +52,21 @@ class Solution:
             current += nums[i]
             running_sum.append(current)
         return running_sum
+
+
+# Solution Java
+# ====================================================================================================================
+# class Solution {
+#     public int[] runningSum(int[] nums) {
+#         int total = 0;
+#         int[] result = new int[nums.length];
+#         for (int i = 0; i < nums.length; i++){
+#             total = total + nums[i];
+#             result[i] = total;
+#         }
+#     return result;
+#     }
+# }
 
 
 # Input
