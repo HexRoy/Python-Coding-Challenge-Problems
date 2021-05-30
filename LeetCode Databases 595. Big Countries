@@ -26,7 +26,7 @@ For example, according to the above table, we should output:
 +--------------+-------------+--------------+
 
 
-# Solution 329 ms	
+# Solution 329 ms
 
 SELECT name, population, area
 
